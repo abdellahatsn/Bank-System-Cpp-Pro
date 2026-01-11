@@ -1,23 +1,25 @@
-# Bank Management System (C++ Edition) 🏦
+# Bank Management System (Enterprise v2.0) 🏦🔐
 
-A high-performance, CLI-based Bank Management System built with **C++**. This project demonstrates advanced procedural programming techniques, efficient memory management, and data persistence.
+A robust, CLI-based financial management system built with **C++**. This project has evolved from a simple data handler into a **Secure Multi-User Environment**, featuring a custom-built permissions engine and advanced data integrity checks.
 
-## 🚀 Key Features
-- **Client Management:** Add, Delete, Update, and Find clients with unique Account Numbers.
-- **Transaction System:** Secure Deposit and Withdraw operations with balance validation.
-- **Data Persistence:** Automatic synchronization with a flat-file database (`ClientsFile.txt`).
-- **Input Validation:** Robust handling of user inputs to prevent buffer errors and duplicate records.
-- **Formatted UI:** Clean table views for client lists and total balances using `iomanip`.
+## 🚀 Key Features (v2.0 Update)
+- **User Authentication:** Integrated login system to secure bank data and restrict unauthorized access.
+- **Role-Based Access Control (RBAC):** Granular permission management (Show Client List, Add, Delete, Update, Transactions, and User Management) using bitwise-inspired logic.
+- **Transaction System:** Secure Deposit and Withdraw operations with real-time balance validation.
+- **Administrative Protection:** Built-in safeguards to prevent self-deletion and unauthorized modification of the 'Admin' account.
+- **Data Persistence:** Automatic synchronization with dual flat-file databases (`ClientsFile.txt` and `UsersFile.txt`).
 
 ## 🛠️ Technical Implementation
-- **Memory Efficiency:** Uses `std::vector` and **Pass-by-Reference** to minimize memory overhead.
-- **String Manipulation:** Custom `split` logic for parsing data records.
-- **Enums & Structs:** Clear logical separation of choices and data models.
-- **Buffer Management:** Clean use of `cin.ignore` and `getline` for a seamless user experience.
+- **Permissions Engine:** Efficient permission checking via logic operations, ensuring high-speed access validation (Complexity: O(1)).
+- **In-Memory Management:** Optimized use of `std::vector` and **Pass-by-Reference** to minimize memory overhead and boost performance.
+- **Robust Input Validation:** Implemented `std::numeric_limits` and stream clearing (`cin.clear/ignore`) to create a "crash-proof" CLI experience.
+- **Custom Serialization:** Developed logic to convert complex struct records into flat-file formats and vice-versa.
+- **Clean Code Architecture:** Organized logic using Enums and modular functions for scalability and maintainability.
 
-## 📁 File Structure
-- `main.cpp`: Core application logic.
-- `ClientsFile.txt`: Data storage file (Semicolon-separated values).
+## 📂 File Structure
+- `main.cpp`: Core application logic, Security/Permissions engine, and UI screens.
+- `ClientsFile.txt`: Persistent storage for client financial records (Separator: `#//#`).
+- `UsersFile.txt`: Secure database for authorized personnel, passwords, and their permission bits.
 
 ## 💻 How to Run
 1. Clone the repository.
@@ -26,4 +28,4 @@ A high-performance, CLI-based Bank Management System built with **C++**. This pr
 4. Run: `./BankSystem` (or `BankSystem.exe` on Windows).
 
 ---
-*Created as part of my deep dive into C++ and Data Integrity.*
+*Developed by Abdellah Ait Sliman as part of a deep dive into C++, Software Security, and Low-Level Logic.*
